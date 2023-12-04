@@ -9,7 +9,7 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>4.16</version>
+        <version>4.51</version>
         <relativePath />
     </parent>
 
@@ -31,15 +31,24 @@
     <properties>
         <revision>2.0.2</revision>
         <changelist>-SNAPSHOT</changelist>
-        <jenkins.version>2.190.3</jenkins.version>
-        <java.level>8</java.level>
+        <jenkins.version>2.346.3</jenkins.version>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.jenkins.tools.bom</groupId>
+                <artifactId>bom-2.190.x</artifactId>
+                <version>16</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
-            <version>1.12</version>
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
@@ -62,7 +71,6 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>script-security</artifactId>
-            <version>1.75</version>
             <optional>true</optional>
         </dependency>
         <dependency>
